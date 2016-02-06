@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="expensemanger.yashodhandivakaran.com.expensemanager">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true" />
+
+        <uses-permission
+            android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+            android:maxSdkVersion="18" />
+
+        <activity
+            android:name=".HomeScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUpAcitivity"
+            android:label="@string/title_activity_sign_up_acitivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BillActivity"
+            android:label="@string/title_activity_bill"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BillAnalyticsActivity"
+            android:label="@string/title_activity_bill_analytics"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

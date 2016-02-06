@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009586</color>
+    <color name="colorPrimaryDark">#177a6e</color>
+    <color name="colorAccent">#009586</color>
+
+    <color name="sign_up_bg">#E3E3E3</color>
+    <color name="text_color">#4E4E4E</color>
+    <color name="signup_button">#009586</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="bill_title">#333333</color>
+    <color name="bill_amount">#7b7b7b</color>
+</resources>
