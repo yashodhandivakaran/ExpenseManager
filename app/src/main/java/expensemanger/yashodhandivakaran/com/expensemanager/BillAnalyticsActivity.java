@@ -1,11 +1,23 @@
 package expensemanger.yashodhandivakaran.com.expensemanager;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class BillAnalyticsActivity extends AppCompatActivity {
+import java.util.List;
+
+import expensemanger.yashodhandivakaran.com.expensemanager.adapter.AnalyticsPagerAdapter;
+import expensemanger.yashodhandivakaran.com.expensemanager.asynctasks.GetMonthlyAnalyticsTask;
+import expensemanger.yashodhandivakaran.com.expensemanager.asynctasks.GetWeeklyAnalyticsTask;
+import expensemanger.yashodhandivakaran.com.expensemanager.data.entities.MonthlyAnalytics;
+import expensemanger.yashodhandivakaran.com.expensemanager.data.entities.WeekAnalytics;
+
+public class BillAnalyticsActivity extends AppCompatActivity  implements GetWeeklyAnalyticsTask.GetWeeklyAnalyticsTaskCallback,
+        GetMonthlyAnalyticsTask.GetMonthlyAnalyticsTaskCallback{
+
+    private ViewPager viewpager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +26,19 @@ public class BillAnalyticsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        viewpager = (ViewPager) findViewById(R.id.pager);
+        AnalyticsPagerAdapter analyticsPagerAdapter = new AnalyticsPagerAdapter(getSupportFragmentManager(),this);
+        viewpager.setAdapter(analyticsPagerAdapter);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Analytics");
+
+        GetMonthlyAnalyticsTask task = new GetMonthlyAnalyticsTask(this,this);
+        task.execute();
+
+        GetWeeklyAnalyticsTask task1 = new GetWeeklyAnalyticsTask(this,this);
+        task1.execute();
+
     }
 
     @Override
@@ -29,4 +52,13 @@ public class BillAnalyticsActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void monthlylyAnalytics(List<MonthlyAnalytics> analyticses) {
+
+    }
+
+    @Override
+    public void weeklyAnalytics(List<WeekAnalytics> analyticses) {
+
+    }
 }

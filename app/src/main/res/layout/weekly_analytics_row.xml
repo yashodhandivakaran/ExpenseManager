@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:layout_alignParentLeft="true"
+        android:id="@+id/time_range"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:textColor="@color/bill_title"
+        />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_alignParentRight="true"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignRight="@id/time_range" />
+
+</RelativeLayout>

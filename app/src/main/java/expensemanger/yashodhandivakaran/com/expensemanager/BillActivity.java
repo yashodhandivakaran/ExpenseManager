@@ -33,6 +33,7 @@ import expensemanger.yashodhandivakaran.com.expensemanager.asynctasks.GetListOfC
 import expensemanger.yashodhandivakaran.com.expensemanager.asynctasks.InsertNewCategoryTask;
 import expensemanger.yashodhandivakaran.com.expensemanager.data.entities.Bill;
 import expensemanger.yashodhandivakaran.com.expensemanager.data.entities.Category;
+import expensemanger.yashodhandivakaran.com.expensemanager.fragment.CategoryPickerDialog;
 
 public class BillActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,
         CategoryListAdapter.CategorySelectionCallback, GetListOfCategoriesTask.GetListOfCategoriesTaskCallback,
@@ -156,6 +157,8 @@ public class BillActivity extends AppCompatActivity implements DatePickerDialog.
                     InsertNewCategoryTask categoryTask = new InsertNewCategoryTask(BillActivity.this,
                             BillActivity.this);
                     categoryTask.execute(categoryEntity);
+                }else {
+                    categoryInserted(mCategory);
                 }
 
             }
